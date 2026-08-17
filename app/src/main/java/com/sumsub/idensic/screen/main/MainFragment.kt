@@ -359,6 +359,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
             when (exception) {
                 is SNSException.Api -> Timber.d("Api exception. ${exception.description}")
                 is SNSException.Network -> Timber.d(exception, "Network exception.")
+                is SNSException.Internal -> Timber.d(exception, "Internal exception.")
                 is SNSException.Unknown -> Timber.d(exception, "Unknown exception.")
             }
         }
